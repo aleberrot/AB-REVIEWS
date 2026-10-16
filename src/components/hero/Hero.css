@@ -1,0 +1,596 @@
+/* Escena de producto: escala y posiciones propias; el resto usa el sistema global. */
+
+.hero {
+  padding: 64px 5% 24px;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px 40px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(44px, 5.2vw, 76px);
+  line-height: 1.02;
+  margin: 26px 0;
+  letter-spacing: -2.5px;
+}
+
+.hero h1 em {
+  color: #4f6d46;
+  font-weight: 400;
+}
+
+.hero__description {
+  font-size: 16px;
+  max-width: 470px;
+  color: var(--muted);
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  margin-top: 28px;
+}
+
+.hero__assurance {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.hero__bottom-note {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+.hero__bottom-note a {
+  letter-spacing: 0;
+  font-size: 12px;
+  text-underline-offset: 4px;
+  min-height: 32px;
+}
+
+.hero-object {
+  min-width: 0;
+  background: #e8eadd;
+  border: 1px solid #d8ddcd;
+  position: relative;
+}
+
+.hero-object__label {
+  padding: 18px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+
+.hero-object__label span:last-child {
+  color: var(--muted);
+}
+
+.hero-object__scene {
+  position: relative;
+  height: 370px;
+  margin: 0 20px;
+}
+
+.hero-card {
+  position: absolute;
+  z-index: 2;
+  width: 215px;
+  height: 153px;
+  top: 160px;
+  left: 0;
+  padding: 18px;
+  transform: rotate(-8deg);
+  border-radius: 8px;
+  color: #fffdf4;
+  background: #234438;
+  border: 1px solid #42614d;
+  box-shadow: 0 16px 18px -12px #203b3555;
+  transition: transform 300ms;
+}
+
+.hero-card__brand {
+  display: block;
+  font-size: 25px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #d5e778;
+  font-weight: 600;
+}
+
+.hero-card__brand small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-left: 8px;
+  color: #f6f4ed;
+}
+
+.hero-card > strong {
+  display: block;
+  font: 19px/1.1 Georgia, serif;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.hero-card__bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 14px;
+  left: 18px;
+  right: 14px;
+}
+
+.hero-card__bottom > span {
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.hero-card .smart-qr {
+  width: 47px;
+  background: #fff;
+}
+
+.hero-object__wave {
+  position: absolute;
+  top: 128px;
+  left: 40%;
+  font-size: 24px;
+  letter-spacing: 7px;
+  color: #628657;
+  opacity: .6;
+  transform: rotate(-20deg);
+}
+
+.phone {
+  position: absolute;
+  top: 35px;
+  right: 8px;
+  width: 187px;
+  height: 303px;
+  border: 5px solid #253b33;
+  border-radius: 28px;
+  background: #fcfcf5;
+  transform: rotate(7deg);
+  box-shadow: 0 18px 28px -18px #203b3566;
+  transition: transform 300ms;
+  overflow: hidden;
+}
+
+.phone__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 32px;
+  padding: 8px 12px;
+  font-size: 8px;
+}
+
+.phone__top i {
+  width: 46px;
+  height: 12px;
+  border-radius: 12px;
+  background: #253b33;
+}
+
+.phone__home {
+  position: absolute;
+  bottom: 8px;
+  width: 54px;
+  height: 3px;
+  border-radius: 5px;
+  background: #253b33;
+  left: calc(50% - 27px);
+}
+
+.phone__screen {
+  padding: 18px 12px;
+  animation: screen-enter 200ms ease-out;
+}
+
+.phone__waiting, .phone__review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.phone__scan {
+  font-size: 49px;
+  color: #6c895e;
+  margin: 16px 0;
+}
+
+.phone__waiting strong {
+  font: 25px Georgia, serif;
+}
+
+.phone__waiting > span:not(.phone__scan) {
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.phone__waiting small {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 28px;
+}
+
+.phone__time {
+  display: block;
+  font-size: 27px;
+  text-align: center;
+  margin: 12px 0;
+}
+
+.phone__notification-view > p {
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin: 18px 0 10px;
+}
+
+.phone__notification {
+  width: 100%;
+  padding: 12px 9px;
+  border: 1px solid #a9baa0;
+  background: #e3ebd9;
+  color: var(--ink);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.phone__notification strong {
+  display: block;
+  font-size: 11px;
+}
+
+.phone__notification span {
+  display: block;
+  font-size: 12px;
+  margin-top: 7px;
+}
+
+.phone__hint {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  margin-top: 22px;
+}
+
+.phone__business-mark {
+  font: 36px Georgia, serif;
+  margin: 8px 0 16px;
+  border-bottom: 1px solid #aab69b;
+  padding-bottom: 8px;
+}
+
+.phone__review > p {
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.phone__review > strong {
+  font: 22px Georgia, serif;
+}
+
+.phone__review > span:not(.phone__business-mark) {
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.phone__review a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  font-size: 11px;
+  margin-top: 15px;
+  text-underline-offset: 4px;
+}
+
+.phone__review small {
+  font-size: 9px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.hero-object__caption {
+  border-top: 1px solid #ccd3c0;
+  margin: 0 20px;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.hero-object__caption p {
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 190px;
+}
+
+.hero-object__caption button {
+  background: transparent;
+  color: var(--ink);
+  border: 0;
+  border-bottom: 1px solid #6e855e;
+  min-height: 44px;
+  padding: 5px 0;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.hero-object__note {
+  font-size: 9px;
+  color: var(--muted);
+  padding: 0 20px 14px;
+}
+
+.hero-object__scene:not([data-step='ready']) .phone {
+  transform: rotate(0);
+  z-index: 3;
+}
+
+.hero-object__scene:not([data-step='ready']) .hero-card {
+  transform: rotate(-4deg) translateY(-6px);
+}
+
+.hero-object__scene[data-step='detected'] .hero-object__wave {
+  animation: nfc-pulse 450ms ease-in-out 2;
+}
+
+@keyframes screen-enter {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nfc-pulse {
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-object__scene {
+    height: 420px;
+  }
+  .phone {
+    width: 208px;
+    height: 336px;
+    right: 30px;
+  }
+  .hero-card {
+    width: 245px;
+    height: 166px;
+    left: 10px;
+    top: 180px;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 801px) {
+  .hero {
+    gap: 24px;
+    padding-top: 48px;
+  }
+  .hero h1 {
+    font-size: 54px;
+  }
+  .hero-object__scene {
+    margin-inline: 12px;
+    height: 340px;
+  }
+  .phone {
+    width: 164px;
+    height: 283px;
+    right: 0;
+  }
+  .hero-card {
+    width: 177px;
+    height: 145px;
+    left: 0;
+    top: 145px;
+    padding: 14px;
+  }
+  .hero-card > strong {
+    font-size: 17px;
+  }
+  .hero-card__bottom {
+    left: 14px;
+    right: 10px;
+  }
+  .hero-card .smart-qr {
+    width: 38px;
+  }
+  .hero-object__caption {
+    flex-wrap: wrap;
+  }
+  .hero-object__label {
+    font-size: 7px;
+    padding-inline: 12px;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 48px;
+    gap: 32px;
+  }
+  .hero h1 {
+    font-size: 66px;
+  }
+  .hero__desktop-break {
+    display: none;
+  }
+  .hero__description {
+    max-width: 560px;
+  }
+  .hero-object {
+    max-width: 490px;
+    width: 100%;
+    justify-self: center;
+  }
+  .hero__bottom-note {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 34px 22px 18px;
+    gap: 28px;
+  }
+  .hero h1 {
+    font-size: clamp(42px, 11.6vw, 58px);
+    letter-spacing: -1.8px;
+    line-height: 1.05;
+    margin: 22px 0;
+  }
+  .hero__description {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-top: 24px;
+  }
+  .hero__actions .text-link {
+    justify-content: center;
+    font-size: 13px;
+  }
+  .hero__assurance {
+    font-size: 11px;
+    margin-top: 14px;
+  }
+  .hero-object__label {
+    padding: 14px 12px 0;
+    font-size: 7px;
+    letter-spacing: .7px;
+    gap: 5px;
+  }
+  .hero-object__scene {
+    height: 313px;
+    margin-inline: 12px;
+  }
+  .phone {
+    width: 157px;
+    height: 274px;
+    top: 20px;
+    right: 0;
+    border-width: 4px;
+  }
+  .phone__screen {
+    padding: 12px 9px;
+  }
+  .phone__scan {
+    font-size: 43px;
+    margin: 12px 0;
+  }
+  .phone__waiting strong {
+    font-size: 23px;
+  }
+  .phone__waiting > span:not(.phone__scan) {
+    font-size: 10px;
+  }
+  .phone__waiting small {
+    margin-top: 20px;
+  }
+  .phone__review > strong {
+    font-size: 20px;
+  }
+  .phone__business-mark {
+    font-size: 30px;
+    margin: 2px 0 12px;
+  }
+  .phone__review a {
+    margin-top: 6px;
+  }
+  .phone__review > span:not(.phone__business-mark) {
+    margin-top: 9px;
+  }
+  .hero-card {
+    width: 158px;
+    height: 136px;
+    top: 132px;
+    padding: 12px;
+  }
+  .hero-card__brand {
+    font-size: 22px;
+  }
+  .hero-card__brand small {
+    font-size: 6px;
+    margin-left: 4px;
+  }
+  .hero-card > strong {
+    font-size: 17px;
+    margin-top: 10px;
+  }
+  .hero-card__bottom {
+    bottom: 10px;
+    left: 12px;
+    right: 10px;
+  }
+  .hero-card .smart-qr {
+    width: 37px;
+  }
+  .hero-card__bottom > span {
+    font-size: 6px;
+  }
+  .hero-object__wave {
+    top: 105px;
+    left: 30%;
+    font-size: 20px;
+  }
+  .hero-object__caption {
+    margin-inline: 12px;
+    padding: 12px 0;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .hero-object__caption p {
+    max-width: none;
+    width: 100%;
+    font-size: 12px;
+  }
+  .hero-object__caption button {
+    font-size: 12px;
+  }
+  .hero-object__note {
+    font-size: 8px;
+    padding-inline: 12px;
+  }
+  .hero__bottom-note {
+    gap: 14px;
+    font-size: 8px;
+    align-items: start;
+  }
+  .hero__bottom-note a {
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+}
