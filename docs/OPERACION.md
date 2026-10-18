@@ -10,7 +10,11 @@
 
 Todos incluyen Smart Link, programación NFC, QR digital, configuración de Google Reviews, pruebas, mini guía, 30 días de soporte de configuración y un cambio de destino sin costo. Pago único, sin mensualidad obligatoria. Despacho no incluido; confirmar retiro o costo según destino antes del pago. No se ha definido ni publicado una tarifa de instalación presencial.
 
-Las maquetas de la web son representaciones de formato. Sustituirlas por fotos de una muestra fabricada antes de prometer acabados, colores o materiales específicos. No publicar números de cupos ni testimonios sin evidencia.
+El catálogo ya usa fotografías reales y el hero conserva una ilustración rotulada. La foto del Kit muestra un stand y una tarjeta; la oferta incluye dos tarjetas. Antes de una nueva publicación, corregir las estrellas junto al logo de Google en el arte físico y volver a fotografiar, según la guía oficial de marca. No publicar números de cupos ni testimonios sin evidencia.
+
+## Piloto y evidencia comercial
+
+Consultar `EVIDENCIA-Y-PILOTO.md` y `piloto/README.md`. La landing presenta una propuesta de cinco negocios durante treinta días, no participantes confirmados. La medición inicial es manual; no se ha activado un contador de escaneos. `npm run pilot:report -- RUTA_PRIVADA.json` resume datos verificados por el operador. Conservar los registros completos fuera del repositorio público.
 
 ## Alta de un negocio
 

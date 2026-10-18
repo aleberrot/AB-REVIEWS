@@ -1,0 +1,97 @@
+[
+  {
+    "businessId": "P01",
+    "baseline": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    },
+    "pilot": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    }
+  },
+  {
+    "businessId": "P02",
+    "baseline": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    },
+    "pilot": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    }
+  },
+  {
+    "businessId": "P03",
+    "baseline": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    },
+    "pilot": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    }
+  },
+  {
+    "businessId": "P04",
+    "baseline": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    },
+    "pilot": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    }
+  },
+  {
+    "businessId": "P05",
+    "baseline": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    },
+    "pilot": {
+      "days": 30,
+      "transactions": null,
+      "invitations": null,
+      "observedOpenings": null,
+      "verifiedPublications": null,
+      "newPublicReviews": null
+    }
+  }
+]

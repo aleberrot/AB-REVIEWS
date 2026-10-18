@@ -12,7 +12,7 @@
 
 - Dirección de catálogo: papel cálido, verde tinta, líneas divisorias y números de referencia. Bordes discretos y sin gradientes.
 - Titulares serif de sistema; texto funcional sans serif. Sin dependencia de fuentes externas.
-- Maquetas CSS de Card, Stand y Kit para explicar el formato, etiquetadas como representaciones.
+- Fotografías reales de Card, Stand y Kit en catálogo. La escena ilustrativa del hero sigue rotulada como representación.
 - Precios de lanzamiento y regulares explícitos. Sin tachados, temporizadores, stock inventado ni testimonios ficticios.
 - Alcance comercial visible: pago único, contenido del Kit, soporte, cambio de destino y despacho aparte.
 - QR real y Smart Link probado. Los botones de consulta identifican el producto en WhatsApp.
@@ -21,4 +21,4 @@
 
 ## Siguiente mejora visual de mayor valor
 
-Fotografiar el primer producto terminado en una caja o mesón real, con luz natural y permiso del negocio. Las maquetas no sustituyen evidencia física. No usar imágenes generadas que presenten como fabricado un acabado que todavía no existe.
+Corregir el arte físico con estrellas junto al logo de Google antes de una nueva publicación. Fotografiar el Kit completo (stand y dos tarjetas), fondo neutro y una toma en mesón con permiso. Mantener marca AB, instrucciones neutrales en español y proporciones verificables. No usar imágenes generadas que presenten como fabricado un acabado que todavía no existe. Ver auditoría y fuentes en `EVIDENCIA-Y-PILOTO.md`.
