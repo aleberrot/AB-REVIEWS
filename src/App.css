@@ -1063,3 +1063,14 @@ p {
     font-size: 36px;
   }
 }
+
+/* Fotografías completas: conserva el diseño físico y evita recortar los productos. */
+.product-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
+  margin-block: 16px;
+  border-radius: 8px;
+}

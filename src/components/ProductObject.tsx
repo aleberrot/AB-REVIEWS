@@ -1,29 +1,26 @@
 import type { ProductFormat } from '../data/products'
+import cardPhoto from '../assets/products/ab-card-real.webp'
+import standPhoto from '../assets/products/ab-stand-real.webp'
+import kitPhoto from '../assets/products/ab-kit-real.webp'
 
-// Maquetas hechas con CSS: no se presentan como fotografías del producto final.
+const photos = {
+  card: { src: cardPhoto, alt: 'Tarjeta física AB Review Card blanca con el logotipo de Google y símbolo NFC.' },
+  stand: { src: standPhoto, alt: 'Stand físico AB Review Stand blanco con el logotipo de Google, código QR e indicación NFC.' },
+  kit: { src: kitPhoto, alt: 'Stand y una tarjeta del AB Review Kit fotografiados juntos, con sus diseños físicos originales.' },
+}
+
 function ProductObject({ format }: { format: ProductFormat }) {
+  const photo = photos[format]
   return (
-    <div className={`product-object product-object--${format}`} aria-hidden="true">
-      {(format === 'stand' || format === 'kit') && (
-        <div className="product-object__stand">
-          <span className="product-object__logo">ab<span>↗</span></span>
-          <span className="product-object__message">¿Cómo estuvo<br />tu visita?</span>
-          <span className="product-object__rule" />
-          <span className="product-object__small">Acerca tu teléfono<br />o escanea el QR</span>
-          <span className="product-object__base" />
-        </div>
-      )}
-      {(format === 'card' || format === 'kit') && (
-        <>
-          {format === 'kit' && <div className="product-object__card product-object__card--back" />}
-          <div className="product-object__card">
-            <span className="product-object__logo">ab<span>↗</span></span>
-            <span className="product-object__message">Tu experiencia<br />merece compartirse.</span>
-            <span className="product-object__small">AB REVIEWS · NFC</span>
-          </div>
-        </>
-      )}
-    </div>
+    <img
+      className="product-photo"
+      src={photo.src}
+      alt={photo.alt}
+      width={1152}
+      height={1536}
+      loading="lazy"
+      decoding="async"
+    />
   )
 }
 
