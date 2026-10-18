@@ -37,7 +37,7 @@ function Home() {
             <article className={`catalog-item ${product.format === 'kit' ? 'catalog-item--featured' : ''}`} key={product.format}>
               <div className="catalog-item__label"><span>AB / 0{index + 1}</span><span>{product.format === 'kit' ? 'RECOMENDADO' : 'NFC + QR'}</span></div>
               <ProductObject format={product.format} />
-              <p className="object-caption">Representación de formato</p>
+              <p className="object-caption">{product.format === 'kit' ? 'Foto real: stand y una tarjeta del Kit' : 'Fotografía del producto real'}</p>
               <h3>{product.name}</h3>
               <p className="catalog-item__use">{product.use}</p>
               <p className="catalog-item__contents">{product.contents}</p>
@@ -108,3 +108,4 @@ function Home() {
 }
 
 export default Home
+
