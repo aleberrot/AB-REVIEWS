@@ -7,9 +7,9 @@ function Hero() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__copy">
         <p className="eyebrow"><span className="status-dot" /> RESEÑAS PARA NEGOCIOS REALES</p>
-        <h1 id="hero-title">Una buena visita<br />merece <em>ser<br className="hero__desktop-break" /> compartida.</em></h1>
-        <p className="hero__description">Haz fácil que tus clientes lleguen a tus reseñas en Google. Una tarjeta o un stand, un toque con el teléfono y tu negocio listo para recibir su opinión.</p>
-        <div className="hero__actions"><Link className="button button--primary" to="/demo">Probar la experiencia <span aria-hidden="true">↗</span></Link><a className="text-link" href="#productos">Ver formatos y precios ↓</a></div>
+        <h1 id="hero-title">Tus clientes de hoy <em>pueden inspirar a los de mañana.</em></h1>
+        <p className="hero__description">Facilita que tus clientes dejen una reseña en Google con una tarjeta o un stand NFC + QR. Lo entregamos configurado para tu negocio.</p>
+        <div className="hero__actions"><Link className="button button--primary" to="/demo">Probar cómo lo verá tu cliente <span aria-hidden="true">↗</span></Link><a className="text-link" href="#productos">Ver formatos y precios ↓</a></div>
         <p className="hero__assurance">NFC + QR · Configuración incluida · Desde $14.990</p>
       </div>
       <HeroVisual />

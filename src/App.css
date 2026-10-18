@@ -84,7 +84,7 @@ main {
 }
 
 h1, h2 {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   letter-spacing: -1.8px;
 }
@@ -1073,4 +1073,13 @@ p {
   object-fit: contain;
   margin-block: 16px;
   border-radius: 8px;
+}
+
+/* Identidad A: titulares claros y atajo de navegación accesible. */
+h1, h2 { font-weight: 600; }
+.skip-link { position: absolute; left: -10000px; }
+.skip-link:focus { left: 20px; top: 12px; z-index: 10; background: var(--paper); padding: 12px; }
+@media (min-width: 561px) and (max-width: 780px) {
+  .catalog__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .catalog-item:last-child { grid-column: 1 / -1; }
 }

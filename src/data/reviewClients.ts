@@ -3,7 +3,10 @@ export interface ReviewClient {
   businessName: string
   reviewUrl: string | null
   active: boolean
-  mode: 'demo' | 'redirect'
+  mode: 'demo' | 'redirect' | 'page'
+  whatsappUrl?: string
+  instagramUrl?: string
+  facebookUrl?: string
 }
 
 // Datos públicos: nunca guardar teléfonos privados, credenciales ni notas aquí.

@@ -13,12 +13,13 @@ function Demo() {
   return (
     <main lang="es">
       <SiteHeader />
+      <div id="contenido-principal" tabIndex={-1} />
       <section className="demo-page section">
         <div className="demo-page__intro">
           <p className="eyebrow">LA MISMA RUTA QUE USARÁ TU TARJETA</p>
           <h1>Pruébalo.<br /><em>Del toque al negocio.</em></h1>
-          <p>El NFC y el QR abren un Smart Link de AB Reviews. En un negocio configurado, ese enlace te lleva directamente a sus reseñas en Google.</p>
-          <p>Esta muestra usa un negocio ficticio y termina aquí: puedes recorrerla sin publicar nada.</p>
+          <p>El NFC y el QR abren un Smart Link de AB Reviews. Según la configuración del negocio, puedes ir directamente a Google o ver una página con acceso a reseñas, WhatsApp y redes sociales.</p>
+          <p>Esta muestra usa un negocio ficticio. Los botones simulan sus destinos sin publicar ni enviar nada.</p>
           <div className="demo-page__qr">
             <SmartQr value={demoLink} downloadable />
             <div><strong>Escanea o abre el enlace.</strong><a className="text-link" href="/r/demo">{demoLink.replace(/^https?:\/\//, '')} ↗</a><p>{isLocal ? 'Prueba local: localhost solo funciona en este equipo. Para probar desde otro teléfono, usa la dirección de red del servidor o la web desplegada.' : 'Este QR y el enlace abren la misma experiencia de prueba.'}</p></div>
