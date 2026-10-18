@@ -3,6 +3,28 @@ import { reviewClients, type ReviewClient } from '../data/reviewClients.ts'
 export const PUBLIC_ORIGIN = 'https://reviews.absoftwareworks.com'
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/
 
+// Page actions only accept verified platform URLs, never arbitrary schemes.
+function platformUrl(value: string | null | undefined, hosts: readonly string[]): string | null {
+  if (!value) return null
+  try {
+    const url = new URL(value)
+    if (url.protocol !== 'https:' || url.username || url.password || url.port) return null
+    return hosts.includes(url.hostname.toLowerCase()) ? url.href : null
+  } catch {
+    return null
+  }
+}
+
+export function getPageActions(client: ReviewClient) {
+  if (!client.active || client.mode !== 'page') return { google: null, whatsapp: null, instagram: null, facebook: null }
+  return {
+    google: platformUrl(client.reviewUrl, ['search.google.com', 'www.google.com', 'maps.google.com', 'g.page', 'maps.app.goo.gl']),
+    whatsapp: platformUrl(client.whatsappUrl, ['wa.me', 'api.whatsapp.com']),
+    instagram: platformUrl(client.instagramUrl, ['instagram.com', 'www.instagram.com']),
+    facebook: platformUrl(client.facebookUrl, ['facebook.com', 'www.facebook.com', 'm.facebook.com']),
+  }
+}
+
 export function isValidSlug(slug: string): boolean {
   return slug.length <= 80 && SLUG_PATTERN.test(slug)
 }
@@ -45,6 +67,13 @@ export function validateClientRegistry(clients: readonly ReviewClient[]): string
     if (!client.businessName.trim()) errors.push(`Negocio sin nombre: ${client.slug}`)
     if (client.active && client.mode === 'redirect' && !getRedirectDestination(client)) {
       errors.push(`Destino inválido: ${client.slug}`)
+    }
+    if (client.active && client.mode === 'page') {
+      const actions = getPageActions(client)
+      if (!actions.google) errors.push(`Destino de Google inválido: ${client.slug}`)
+      for (const [field, action] of [['whatsappUrl', 'whatsapp'], ['instagramUrl', 'instagram'], ['facebookUrl', 'facebook']] as const) {
+        if (client[field] && !actions[action]) errors.push(`Canal inválido (${field}): ${client.slug}`)
+      }
     }
   }
   return errors

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { findReviewClient, getRedirectDestination } from '../lib/smartLinks'
 import DemoDestination from '../components/DemoDestination'
+import BusinessDestination from '../components/BusinessDestination'
 
 function ReviewLink() {
   const { slug } = useParams()
@@ -13,6 +14,7 @@ function ReviewLink() {
   }, [destination])
 
   if (client?.active && client.mode === 'demo') return <DemoDestination />
+  if (client?.active && client.mode === 'page') return <main className="demo-destination" lang="es"><BusinessDestination client={client} /></main>
 
   return (
     <main className="link-status" lang="es">

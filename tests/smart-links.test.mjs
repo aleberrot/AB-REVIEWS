@@ -2,7 +2,7 @@ import test from 'node:test'
 import assert from 'node:assert/strict'
 import QRCode from 'qrcode'
 import jsQR from 'jsqr'
-import { buildSmartLink, findReviewClient, getRedirectDestination, validateClientRegistry } from '../src/lib/smartLinks.ts'
+import { buildSmartLink, findReviewClient, getRedirectDestination, getPageActions, validateClientRegistry } from '../src/lib/smartLinks.ts'
 import { reviewClients } from '../src/data/reviewClients.ts'
 import { createQrGraphic } from '../src/lib/qr.ts'
 
@@ -13,6 +13,27 @@ const client = {
   active: true,
   mode: 'redirect',
 }
+
+test('la página conserva Google como acción principal y omite canales ausentes', () => {
+  const page = { ...client, mode: 'page', instagramUrl: 'https://www.instagram.com/ejemplo/' }
+  assert.deepEqual(getPageActions(page), { google: client.reviewUrl, whatsapp: null, instagram: page.instagramUrl, facebook: null })
+  assert.equal(getRedirectDestination(page), null)
+  assert.deepEqual(validateClientRegistry([page]), [])
+  assert.equal(getPageActions({ ...page, active: false }).google, null)
+})
+
+test('la página rechaza canales con destinos ajenos, credenciales o esquemas inseguros', () => {
+  for (const instagramUrl of ['javascript:alert(1)', 'http://instagram.com/a', 'https://instagram.com.evil.example/a', 'https://user:pass@instagram.com/a', 'https://instagram.com:444/a']) {
+    const page = { ...client, mode: 'page', instagramUrl }
+    assert.equal(getPageActions(page).instagram, null)
+    assert.ok(validateClientRegistry([page]).some(error => error.includes('instagramUrl')))
+  }
+  const page = { ...client, mode: 'page', reviewUrl: 'https://example.com/review', whatsappUrl: 'https://example.com/chat', facebookUrl: 'https://example.com/profile' }
+  assert.equal(getPageActions(page).google, null)
+  assert.equal(getPageActions(page).whatsapp, null)
+  assert.equal(getPageActions(page).facebook, null)
+  assert.equal(validateClientRegistry([page]).length, 3)
+})
 
 test('el registro público es válido y la demo no tiene un destino real', () => {
   assert.deepEqual(validateClientRegistry(reviewClients), [])

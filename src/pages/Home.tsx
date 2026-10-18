@@ -15,6 +15,7 @@ function Home() {
   return (
     <main lang="es" id="contenido">
       <SiteHeader />
+      <div id="contenido-principal" tabIndex={-1} />
       <Hero />
 
       <section className="service-strip" aria-label="Condiciones del servicio">
@@ -62,17 +63,17 @@ function Home() {
       </section>
 
       <section className="smart-link section" aria-labelledby="smart-title">
-        <div className="smart-link__diagram" aria-label="NFC y QR abren tu enlace de AB Reviews, que lleva a Google">
+        <div className="smart-link__diagram" aria-label="NFC y QR abren tu enlace de AB Reviews: acceso directo a Google o página con reseñas y contacto">
           <div className="smart-link__sources"><span>TARJETA NFC</span><span>CÓDIGO QR</span></div>
           <span className="smart-link__arrow" aria-hidden="true">↓</span>
           <div className="smart-link__address"><span>TU ENLACE AB REVIEWS</span><strong>/r/tu-negocio</strong></div>
           <span className="smart-link__arrow" aria-hidden="true">↓</span>
-          <span className="smart-link__target">Reseñas de tu negocio en Google ↗</span>
+          <span className="smart-link__target">Google · WhatsApp · Redes</span>
         </div>
         <div>
           <p className="eyebrow">EL DETALLE QUE HACE LA DIFERENCIA</p>
-          <h2 id="smart-title">Tu enlace puede cambiar.<br />Tu tarjeta se queda.</h2>
-          <p>Tu Card o Stand apunta a un enlace propio de AB Reviews. Si necesitas actualizar el destino, lo cambiamos nosotros sin recuperar el producto físico.</p>
+          <h2 id="smart-title">Reseñas y contacto,<br />en un mismo enlace.</h2>
+          <p>Tu Card o Stand abre un enlace propio de AB Reviews. Puedes elegir acceso directo a Google o una página con la reseña como acción principal, WhatsApp y tus redes configuradas. Tu enlace puede cambiar; tu tarjeta se queda.</p>
           <p className="smart-link__note">Incluimos un cambio de destino sin costo. El Kit comparte un mismo enlace entre el stand y sus dos tarjetas.</p>
           <Link className="text-link" to="/demo">Ver el Smart Link en acción <span aria-hidden="true">↗</span></Link>
         </div>
