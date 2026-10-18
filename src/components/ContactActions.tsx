@@ -1,12 +1,13 @@
 interface ContactActionsProps {
   product?: string
   compact?: boolean
+  inquiry?: string
 }
 
-function ContactActions({ product, compact = false }: ContactActionsProps) {
-  const message = encodeURIComponent(product
+function ContactActions({ product, compact = false, inquiry }: ContactActionsProps) {
+  const message = encodeURIComponent(inquiry ?? (product
     ? `Hola Alejandro, me interesa ${product} de AB Reviews. Quiero confirmar disponibilidad, precio de lanzamiento y entrega para mi negocio.`
-    : 'Hola Alejandro, quiero AB Reviews para mi negocio. ¿Podemos coordinar la configuración y entrega?')
+    : 'Hola Alejandro, quiero AB Reviews para mi negocio. ¿Podemos coordinar la configuración y entrega?'))
 
   return (
     <div className="contact-actions">
