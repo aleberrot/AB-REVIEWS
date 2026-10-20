@@ -7,6 +7,9 @@ export interface ReviewClient {
   whatsappUrl?: string
   instagramUrl?: string
   facebookUrl?: string
+  tiktokUrl?: string
+  youtubeUrl?: string
+  linkedinUrl?: string
 }
 
 // Datos públicos: nunca guardar teléfonos privados, credenciales ni notas aquí.

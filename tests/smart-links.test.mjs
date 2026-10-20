@@ -16,7 +16,7 @@ const client = {
 
 test('la página conserva Google como acción principal y omite canales ausentes', () => {
   const page = { ...client, mode: 'page', instagramUrl: 'https://www.instagram.com/ejemplo/' }
-  assert.deepEqual(getPageActions(page), { google: client.reviewUrl, whatsapp: null, instagram: page.instagramUrl, facebook: null })
+  assert.deepEqual(getPageActions(page), { google: client.reviewUrl, whatsapp: null, instagram: page.instagramUrl, facebook: null, tiktok: null, youtube: null, linkedin: null })
   assert.equal(getRedirectDestination(page), null)
   assert.deepEqual(validateClientRegistry([page]), [])
   assert.equal(getPageActions({ ...page, active: false }).google, null)
@@ -94,4 +94,16 @@ test('el QR se decodifica al Smart Link, con margen blanco incluido', () => {
   assert.equal(graphic.size, qr.modules.size + 8)
   assert.equal(jsQR(rgba, pixels, pixels)?.data, value)
   assert.ok(decodeURIComponent(graphic.downloadUrl).includes('<svg'))
+})
+
+test('redes adicionales aceptan sus plataformas y rechazan dominios engañosos', () => {
+  for (const [field, action, url] of [['tiktokUrl','tiktok','https://www.tiktok.com/@negocio'], ['youtubeUrl','youtube','https://www.youtube.com/@negocio'], ['linkedinUrl','linkedin','https://www.linkedin.com/company/negocio']]) {
+    const page = { ...client, mode: 'page', [field]: url }
+    assert.equal(getPageActions(page)[action], url)
+    assert.deepEqual(validateClientRegistry([page]), [])
+    for (const invalid of ['javascript:alert(1)', url.replace('https:', 'http:'), url.replace('.com/', '.com.evil.example/')]) {
+      assert.equal(getPageActions({ ...page, [field]: invalid })[action], null)
+      assert.ok(validateClientRegistry([{ ...page, [field]: invalid }]).length)
+    }
+  }
 })

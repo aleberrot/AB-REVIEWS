@@ -79,7 +79,7 @@ main {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #537d42;
+  background: #087e8b;
   flex: 0 0 7px;
 }
 
@@ -127,7 +127,7 @@ p {
 }
 
 .button--primary:hover {
-  background: #33564b;
+  background: #075fca;
 }
 
 .text-link {
@@ -219,7 +219,7 @@ p {
 }
 
 .catalog-item--featured {
-  background: #e9eddd;
+  background: #eff6fb;
 }
 
 .catalog-item__label {
@@ -302,12 +302,12 @@ p {
   top: 55px;
   left: 50%;
   transform: translateX(-50%) rotate(-9deg);
-  background: #234438;
-  border: 1px solid #375b48;
+  background: #10243a;
+  border: 1px solid #254768;
   border-radius: 7px;
-  color: #f8f6e9;
+  color: #ffffff;
   padding: 14px;
-  box-shadow: 0 14px 16px -12px #203b3544;
+  box-shadow: 0 14px 16px -12px #10243a44;
 }
 
 .product-object__logo {
@@ -322,7 +322,7 @@ p {
 
 .product-object__message {
   display: block;
-  font: 13px/1.3 Georgia, serif;
+  font: 13px/1.3 'Segoe UI', Arial, sans-serif;
   margin-top: 8px;
 }
 
@@ -341,9 +341,9 @@ p {
   left: 50%;
   transform: translateX(-50%) skewY(-4deg);
   padding: 17px;
-  background: #e6e2d4;
-  border: 1px solid #b7b9a8;
-  box-shadow: 8px 7px 0 #d2d2c2;
+  background: #e5edf5;
+  border: 1px solid #b8cadb;
+  box-shadow: 8px 7px 0 #cadbe9;
 }
 
 .product-object__stand .product-object__logo {
@@ -351,7 +351,7 @@ p {
 }
 
 .product-object__stand .product-object__logo > span {
-  color: #527545;
+  color: #087e8b;
 }
 
 .product-object__stand .product-object__message {
@@ -369,7 +369,7 @@ p {
   display: block;
   width: 30px;
   height: 1px;
-  background: #7c8b71;
+  background: #526477;
   margin-top: 12px;
 }
 
@@ -380,8 +380,8 @@ p {
   height: 18px;
   bottom: -17px;
   transform: skewX(-35deg);
-  background: #b9bcaa;
-  border: 1px solid #a6ab99;
+  background: #b8cadb;
+  border: 1px solid #b8cadb;
 }
 
 .product-object--kit .product-object__stand {
@@ -399,7 +399,7 @@ p {
 .product-object--kit .product-object__card--back {
   top: 109px;
   left: 30%;
-  background: #43634f;
+  background: #075fca;
   transform: translateX(-50%) rotate(-17deg);
 }
 
@@ -422,7 +422,7 @@ p {
   gap: 80px;
   padding-top: 64px;
   border-block: 1px solid var(--rule);
-  background: #eeeee4;
+  background: #eff6fb;
 }
 
 .included h2 {
@@ -446,13 +446,13 @@ p {
   align-items: center;
   gap: 22px;
   padding: 13px 0;
-  border-bottom: 1px solid #cbd0c0;
+  border-bottom: 1px solid #cddce8;
   font-size: 14px;
 }
 
 .included__list span {
   font-size: 10px;
-  color: #5e725b;
+  color: #087e8b;
 }
 
 .smart-link {
@@ -482,7 +482,7 @@ p {
   flex-direction: column;
   padding: 40px 24px;
   border: 1px solid var(--rule);
-  background: #f0f0e6;
+  background: #eff6fb;
 }
 
 .smart-link__sources {
@@ -495,14 +495,14 @@ p {
 }
 
 .smart-link__sources span {
-  border-bottom: 1px solid #8b9a7b;
+  border-bottom: 1px solid #526477;
   padding: 10px 20px;
 }
 
 .smart-link__arrow {
   font-size: 25px;
   margin: 16px 0;
-  color: #7c8d70;
+  color: #526477;
 }
 
 .smart-link__address {
@@ -518,7 +518,7 @@ p {
 .smart-link__address > span {
   font-size: 10px;
   letter-spacing: 1.5px;
-  color: #dae4c2;
+  color: #b9f7ec;
 }
 
 .smart-link__address strong {
@@ -544,13 +544,13 @@ p {
 }
 
 .how__steps li {
-  border-top: 1px solid #a6b298;
+  border-top: 1px solid #526477;
   padding-top: 18px;
 }
 
 .how__number {
-  font: 36px Georgia, serif;
-  color: #66805a;
+  font: 36px 'Segoe UI', Arial, sans-serif;
+  color: #087e8b;
 }
 
 .how__steps h3 {
@@ -595,7 +595,7 @@ p {
   grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   background: var(--ink);
-  color: #f6f4ed;
+  color: #ffffff;
 }
 
 .contact h2 {
@@ -606,7 +606,7 @@ p {
 .contact p:not(.eyebrow) {
   font-size: 15px;
   max-width: 520px;
-  color: #dde1d4;
+  color: #dbeafe;
 }
 
 .contact .button--primary {
@@ -615,11 +615,11 @@ p {
 }
 
 .contact .button--primary:hover {
-  background: #e6f4a0;
+  background: #b9f7ec;
 }
 
 .contact aside {
-  border-left: 1px solid #637461;
+  border-left: 1px solid #526477;
   padding-left: 60px;
   align-self: center;
 }
@@ -636,7 +636,7 @@ p {
 }
 
 .contact aside em {
-  font: italic 23px/1.5 Georgia, serif;
+  font: italic 23px/1.5 'Segoe UI', Arial, sans-serif;
   color: #fff;
 }
 
@@ -726,10 +726,10 @@ p {
 
 .demo-business {
   padding: 32px;
-  background: #fffdf7;
+  background: #ffffff;
   border: 1px solid var(--rule);
   text-align: center;
-  box-shadow: 12px 12px 0 #e5e5d8;
+  box-shadow: 12px 12px 0 #dbeafe;
 }
 
 .demo-business > .eyebrow {
@@ -744,9 +744,9 @@ p {
   width: 76px;
   height: 76px;
   margin: 40px auto 24px;
-  border: 1px solid #d4cfbe;
-  color: #766846;
-  font: 42px Georgia, serif;
+  border: 1px solid #cddce8;
+  color: #526477;
+  font: 42px 'Segoe UI', Arial, sans-serif;
 }
 
 .demo-business__category {
@@ -912,7 +912,7 @@ p {
   }
   .contact aside {
     border-left: 0;
-    border-top: 1px solid #637461;
+    border-top: 1px solid #526477;
     padding: 28px 0 0;
   }
   .contact__mark {
@@ -1057,7 +1057,7 @@ p {
   }
   .demo-business {
     padding: 26px 18px;
-    box-shadow: 6px 6px 0 #e5e5d8;
+    box-shadow: 6px 6px 0 #dbeafe;
   }
   .demo-business :is(h1, h2) {
     font-size: 36px;
