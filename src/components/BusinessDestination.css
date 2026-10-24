@@ -9,7 +9,7 @@
   text-align: center;
 }
 .business-destination__demo { font-size: 12px; color: var(--muted); }
-.business-destination__monogram { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: var(--paper); margin: 20px auto 16px; font: 28px Georgia, serif; }
+.business-destination__monogram { display: grid; place-items: center; width: 58px; height: 58px; border-radius: 50%; background: var(--paper); margin: 20px auto 16px; font: 28px 'Segoe UI', Arial, sans-serif; }
 .business-destination :is(h1,h2) { font: 600 28px/1.2 'Segoe UI',Arial,sans-serif; letter-spacing: -.5px; margin: 0 0 16px; overflow-wrap: anywhere; }
 .business-destination > p { color: var(--muted); }
 .business-destination .button { width: 100%; margin-top: 24px; border-radius: 8px; }
@@ -23,3 +23,5 @@
 .social-icon:hover { background: var(--paper); border-color: var(--ink); }
 .business-destination p.business-destination__signature { margin-top: 24px; font-size: 13px; }
 @media (max-width: 380px) { .business-destination { padding: 24px 18px; } }
+
+.business-destination__extra-networks { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin-top: 16px; }

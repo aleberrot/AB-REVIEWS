@@ -16,12 +16,15 @@ function platformUrl(value: string | null | undefined, hosts: readonly string[])
 }
 
 export function getPageActions(client: ReviewClient) {
-  if (!client.active || client.mode !== 'page') return { google: null, whatsapp: null, instagram: null, facebook: null }
+  if (!client.active || client.mode !== 'page') return { google: null, whatsapp: null, instagram: null, facebook: null, tiktok: null, youtube: null, linkedin: null }
   return {
     google: platformUrl(client.reviewUrl, ['search.google.com', 'www.google.com', 'maps.google.com', 'g.page', 'maps.app.goo.gl']),
     whatsapp: platformUrl(client.whatsappUrl, ['wa.me', 'api.whatsapp.com']),
     instagram: platformUrl(client.instagramUrl, ['instagram.com', 'www.instagram.com']),
     facebook: platformUrl(client.facebookUrl, ['facebook.com', 'www.facebook.com', 'm.facebook.com']),
+    tiktok: platformUrl(client.tiktokUrl, ['tiktok.com', 'www.tiktok.com']),
+    youtube: platformUrl(client.youtubeUrl, ['youtube.com', 'www.youtube.com', 'youtu.be']),
+    linkedin: platformUrl(client.linkedinUrl, ['linkedin.com', 'www.linkedin.com']),
   }
 }
 
@@ -71,7 +74,7 @@ export function validateClientRegistry(clients: readonly ReviewClient[]): string
     if (client.active && client.mode === 'page') {
       const actions = getPageActions(client)
       if (!actions.google) errors.push(`Destino de Google inválido: ${client.slug}`)
-      for (const [field, action] of [['whatsappUrl', 'whatsapp'], ['instagramUrl', 'instagram'], ['facebookUrl', 'facebook']] as const) {
+      for (const [field, action] of [['whatsappUrl', 'whatsapp'], ['instagramUrl', 'instagram'], ['facebookUrl', 'facebook'], ['tiktokUrl', 'tiktok'], ['youtubeUrl', 'youtube'], ['linkedinUrl', 'linkedin']] as const) {
         if (client[field] && !actions[action]) errors.push(`Canal inválido (${field}): ${client.slug}`)
       }
     }

@@ -16,7 +16,7 @@
 }
 
 .hero h1 em {
-  color: #4f6d46;
+  color: #075fca;
   font-weight: 400;
 }
 
@@ -61,8 +61,8 @@
 
 .hero-object {
   min-width: 0;
-  background: #e8eadd;
-  border: 1px solid #d8ddcd;
+  background: #eff6fb;
+  border: 1px solid #cddce8;
   position: relative;
 }
 
@@ -95,10 +95,10 @@
   padding: 18px;
   transform: rotate(-8deg);
   border-radius: 8px;
-  color: #fffdf4;
-  background: #234438;
-  border: 1px solid #42614d;
-  box-shadow: 0 16px 18px -12px #203b3555;
+  color: #ffffff;
+  background: #10243a;
+  border: 1px solid #254768;
+  box-shadow: 0 16px 18px -12px #10243a55;
   transition: transform 300ms;
 }
 
@@ -107,7 +107,7 @@
   font-size: 25px;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: #d5e778;
+  color: #5eead4;
   font-weight: 600;
 }
 
@@ -115,12 +115,12 @@
   font-size: 8px;
   letter-spacing: 2px;
   margin-left: 8px;
-  color: #f6f4ed;
+  color: #ffffff;
 }
 
 .hero-card > strong {
   display: block;
-  font: 19px/1.1 Georgia, serif;
+  font: 19px/1.1 'Segoe UI', Arial, sans-serif;
   margin-top: 10px;
   font-weight: 400;
 }
@@ -151,7 +151,7 @@
   left: 40%;
   font-size: 24px;
   letter-spacing: 7px;
-  color: #628657;
+  color: #087e8b;
   opacity: .6;
   transform: rotate(-20deg);
 }
@@ -162,11 +162,11 @@
   right: 8px;
   width: 187px;
   height: 303px;
-  border: 5px solid #253b33;
+  border: 5px solid #10243a;
   border-radius: 28px;
-  background: #fcfcf5;
+  background: #ffffff;
   transform: rotate(7deg);
-  box-shadow: 0 18px 28px -18px #203b3566;
+  box-shadow: 0 18px 28px -18px #10243a66;
   transition: transform 300ms;
   overflow: hidden;
 }
@@ -184,7 +184,7 @@
   width: 46px;
   height: 12px;
   border-radius: 12px;
-  background: #253b33;
+  background: #10243a;
 }
 
 .phone__home {
@@ -193,7 +193,7 @@
   width: 54px;
   height: 3px;
   border-radius: 5px;
-  background: #253b33;
+  background: #10243a;
   left: calc(50% - 27px);
 }
 
@@ -211,12 +211,12 @@
 
 .phone__scan {
   font-size: 49px;
-  color: #6c895e;
+  color: #087e8b;
   margin: 16px 0;
 }
 
 .phone__waiting strong {
-  font: 25px Georgia, serif;
+  font: 25px 'Segoe UI', Arial, sans-serif;
 }
 
 .phone__waiting > span:not(.phone__scan) {
@@ -246,8 +246,8 @@
 .phone__notification {
   width: 100%;
   padding: 12px 9px;
-  border: 1px solid #a9baa0;
-  background: #e3ebd9;
+  border: 1px solid #b8cadb;
+  background: #dbeafe;
   color: var(--ink);
   border-radius: 8px;
   text-align: left;
@@ -272,9 +272,9 @@
 }
 
 .phone__business-mark {
-  font: 36px Georgia, serif;
+  font: 36px 'Segoe UI', Arial, sans-serif;
   margin: 8px 0 16px;
-  border-bottom: 1px solid #aab69b;
+  border-bottom: 1px solid #b8cadb;
   padding-bottom: 8px;
 }
 
@@ -285,7 +285,7 @@
 }
 
 .phone__review > strong {
-  font: 22px Georgia, serif;
+  font: 22px 'Segoe UI', Arial, sans-serif;
 }
 
 .phone__review > span:not(.phone__business-mark) {
@@ -310,7 +310,7 @@
 }
 
 .hero-object__caption {
-  border-top: 1px solid #ccd3c0;
+  border-top: 1px solid #cddce8;
   margin: 0 20px;
   padding: 16px 0;
   display: flex;
@@ -329,7 +329,7 @@
   background: transparent;
   color: var(--ink);
   border: 0;
-  border-bottom: 1px solid #6e855e;
+  border-bottom: 1px solid #087e8b;
   min-height: 44px;
   padding: 5px 0;
   font-size: 12px;
