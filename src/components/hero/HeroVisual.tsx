@@ -54,10 +54,11 @@ function HeroVisual() {
     <figure className="hero-object" aria-label="Simulación del acceso NFC a AB Reviews">
       <div className="hero-object__label"><span>AB / EN TU PUNTO DE ATENCIÓN</span><span>PRUEBA INTERACTIVA</span></div>
       <div className="hero-object__scene" data-step={step}>
-        <div className="hero-card">
-          <span className="hero-card__brand" aria-hidden="true">ab↗ <small>REVIEWS</small></span>
-          <strong>¿Cómo estuvo<br />tu visita?</strong>
-          <div className="hero-card__bottom"><span>Acerca tu teléfono.<br />O escanea el QR.</span><SmartQr value={buildSmartLink('demo')} /></div>
+        <div className="hero-access">
+          <span className="eyebrow">DOS FORMAS DE ENTRAR</span>
+          <strong>NFC + QR</strong>
+          <p>Acerca o escanea.<br />Abre tu Smart Link.</p>
+          <SmartQr value={buildSmartLink('demo')} />
         </div>
         <span className="hero-object__wave" aria-hidden="true">))</span>
         <div className="phone">
@@ -70,7 +71,7 @@ function HeroVisual() {
         <p role="status">{instructions[step]}</p>
         <button ref={controlRef} onClick={() => setStep(step === 'ready' ? 'detected' : 'ready')}>{step === 'ready' ? 'Simular acercamiento →' : 'Reiniciar ↺'}</button>
       </figcaption>
-      <p className="hero-object__note">Representación ilustrativa. El QR abre la demo pública.</p>
+      <p className="hero-object__note">Simulación de uso; no muestra un producto físico. El QR abre la demo pública.</p>
     </figure>
   )
 }

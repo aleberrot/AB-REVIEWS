@@ -597,3 +597,17 @@
 
 .hero h1 { overflow-wrap: anywhere; }
 .hero h1 em { font-style: normal; font-weight: inherit; color: var(--ink); background: linear-gradient(transparent 80%, var(--accent) 80%); }
+
+/* Panel informativo plano: evita presentar arte ilustrativo como producto fabricado. */
+.hero-access { position: absolute; left: 0; top: 70px; width: 45%; padding: 16px; border-block: 1px solid var(--rule); }
+.hero-access .eyebrow { font-size: 8px; letter-spacing: .5px; }
+.hero-access > strong { display: block; font-size: 26px; margin: 18px 0 10px; }
+.hero-access p { font-size: 12px; }
+.hero-access .smart-qr { width: 82px; margin-top: 18px; }
+.hero-object__wave { display: none; }
+@media (max-width: 560px) {
+  .hero-access { top: 32px; width: 43%; padding: 10px 4px; }
+  .hero-access > strong { font-size: 22px; }
+  .hero-access p { font-size: 10px; }
+  .hero-access .smart-qr { width: 72px; }
+}
