@@ -1,18 +1,18 @@
 /* Base compartida: sin estilos de la plantilla Vite ni modo oscuro implícito. */
 
 :root {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #203b35;
-  background: #f6f4ed;
+  font-family: 'Inter', 'Segoe UI Variable', 'Segoe UI', Arial, sans-serif;
+  color: #10243a;
+  background: #ffffff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   color-scheme: light;
-  --ink: #203b35;
-  --muted: #59665e;
-  --paper: #f6f4ed;
-  --rule: #d4d7cb;
-  --accent: #d5e778;
+  --ink: #10243a;
+  --muted: #526477;
+  --paper: #ffffff;
+  --rule: #cddce8;
+  --accent: #5eead4;
 }
 
 * {
@@ -44,7 +44,7 @@ button, a, summary {
 }
 
 a:focus-visible, button:focus-visible, summary:focus-visible {
-  outline: 3px solid #92642e;
+  outline: 3px solid #075fca;
   outline-offset: 5px;
 }
 
@@ -61,8 +61,8 @@ img {
 }
 
 ::selection {
-  background: #d5e778;
-  color: #203b35;
+  background: #5eead4;
+  color: #10243a;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -14,7 +14,7 @@ function SocialIcon({ network }: { network: 'instagram' | 'facebook' }) {
 export default function BusinessDestination({ client, embedded = false, demo = false }: { client: ReviewClient; embedded?: boolean; demo?: boolean }) {
   const [message, setMessage] = useState('Esta demostración no publica reseñas ni abre cuentas reales.')
   const Heading = embedded ? 'h2' : 'h1'
-  const actions = demo ? { google: '#', whatsapp: '#', instagram: '#', facebook: '#' } : getPageActions(client)
+  const actions = demo ? { google: '#', whatsapp: '#', instagram: '#', facebook: '#', tiktok: '#', youtube: '#', linkedin: '#' } : getPageActions(client)
   const simulate = (channel: string) => setMessage(`En un negocio configurado, esta opción abriría ${channel}. Esta prueba no ha enviado ni publicado nada.`)
   const socialNetworks = ['instagram', 'facebook'] as const
   return (
@@ -35,6 +35,12 @@ export default function BusinessDestination({ client, embedded = false, demo = f
         return demo ? <button key={network} className="social-icon" aria-label={label} title={label} onClick={() => simulate(label)}><SocialIcon network={network} /></button> : <a key={network} className="social-icon" aria-label={label} title={label} href={href}><SocialIcon network={network} /></a>
       })}</div></div>}
       <p className="business-destination__signature">Facilitado por <strong>AB Reviews</strong></p>
+      <div className="business-destination__extra-networks">{(['tiktok', 'youtube', 'linkedin'] as const).map(network => {
+        const href = actions[network]
+        const label = { tiktok: 'TikTok', youtube: 'YouTube', linkedin: 'LinkedIn' }[network]
+        if (!href) return null
+        return demo ? <button className="text-link" key={network} onClick={() => simulate(label)}>{label} ↗</button> : <a className="text-link" key={network} href={href}>{label} ↗</a>
+      })}</div>
       {demo && <p className="business-destination__help" role="status">{message}</p>}
     </section>
   )

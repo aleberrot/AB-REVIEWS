@@ -12,7 +12,12 @@ const photos = {
 function ProductObject({ format }: { format: ProductFormat }) {
   const photo = photos[format]
   return (
-    <img
+    <div className="product-reference">
+      <div className="product-reference__label"><span>FORMATO {format === 'card' ? 'TARJETA' : format === 'stand' ? 'STAND' : 'KIT'}</span><strong>{format === 'kit' ? '1 stand + 2 tarjetas' : format === 'card' ? 'Para llevar contigo' : 'Para tu mesón'}</strong><p>Presentación provisional.<br />Fotografía renovada pendiente.</p></div>
+      <details className="product-reference__photo">
+        <summary>Ver foto real disponible</summary>
+        <p className="small-print">Referencia del ejemplar fotografiado; el diseño final se confirma antes de pagar. {format === 'kit' && 'La foto muestra un stand y una tarjeta; el kit ofrecido incluye dos tarjetas.'}</p>
+        <img
       className="product-photo"
       src={photo.src}
       alt={photo.alt}
@@ -20,7 +25,9 @@ function ProductObject({ format }: { format: ProductFormat }) {
       height={1536}
       loading="lazy"
       decoding="async"
-    />
+        />
+      </details>
+    </div>
   )
 }
 

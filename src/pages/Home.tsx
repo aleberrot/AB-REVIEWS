@@ -29,7 +29,7 @@ function Home() {
           <p className="eyebrow">01 / ELIGE DÓNDE PONERLO</p>
           <div>
             <h2 id="catalog-title">En tu mesón.<br />En la mano de tu cliente.</h2>
-            <p>Elige el formato. Nosotros lo conectamos con tu negocio.</p>
+            <p>Una tarjeta para acercarte a tu cliente. Un stand para estar a la vista. Un kit para cubrir más puntos de atención.</p>
           </div>
         </div>
         <div className="catalog__launch"><span className="status-dot" /> Lanzamiento para primeros clientes <span>Pago único · CLP</span></div>
@@ -38,7 +38,6 @@ function Home() {
             <article className={`catalog-item ${product.format === 'kit' ? 'catalog-item--featured' : ''}`} key={product.format}>
               <div className="catalog-item__label"><span>AB / 0{index + 1}</span><span>{product.format === 'kit' ? 'RECOMENDADO' : 'NFC + QR'}</span></div>
               <ProductObject format={product.format} />
-              <p className="object-caption">{product.format === 'kit' ? 'Foto real: stand y una tarjeta del Kit' : 'Fotografía del producto real'}</p>
               <h3>{product.name}</h3>
               <p className="catalog-item__use">{product.use}</p>
               <p className="catalog-item__contents">{product.contents}</p>
@@ -54,8 +53,8 @@ function Home() {
       <section className="included section" aria-labelledby="included-title">
         <div>
           <p className="eyebrow">MÁS QUE EL OBJETO</p>
-          <h2 id="included-title">Abres el paquete.<br />Ya está configurado.</h2>
-          <p>No tienes que programar el chip ni resolver el enlace de Google. Cada formato incluye la puesta en marcha para tu negocio.</p>
+          <h2 id="included-title">Tu equipo atiende.<br />Nosotros lo dejamos listo.</h2>
+          <p>Recibe tu NFC y QR configurados y probados. Colócalos donde termina la atención e invita a compartir una experiencia real.</p>
         </div>
         <ul className="included__list">
           {includedServices.map((service, index) => <li key={service}><span>0{index + 1}</span>{service}</li>)}
@@ -68,7 +67,7 @@ function Home() {
           <span className="smart-link__arrow" aria-hidden="true">↓</span>
           <div className="smart-link__address"><span>TU ENLACE AB REVIEWS</span><strong>/r/tu-negocio</strong></div>
           <span className="smart-link__arrow" aria-hidden="true">↓</span>
-          <span className="smart-link__target">Google · WhatsApp · Redes</span>
+          <span className="smart-link__target"><strong>Dejar reseña en Google</strong><br />WhatsApp y redes como opciones secundarias</span>
         </div>
         <div>
           <p className="eyebrow">EL DETALLE QUE HACE LA DIFERENCIA</p>
@@ -88,25 +87,31 @@ function Home() {
         </ol>
       </section>
 
-      <section className="included section" aria-labelledby="evidence-title">
-        <div>
-          <p className="eyebrow">OPINIONES REALES, DECISIONES INFORMADAS</p>
-          <h2 id="evidence-title">Haz más fácil compartir una experiencia.</h2>
-          <p>AB Reviews evita que tu cliente tenga que buscar el negocio para llegar al enlace de reseñas. Tú recibes el producto configurado y una guía para invitar de forma neutral.</p>
-          <p>No prometemos ventas, posicionamiento ni una cantidad de reseñas. El cliente decide si publica y qué valoración deja.</p>
+      <section className="review-impact section" aria-labelledby="evidence-title">
+        <div className="section-heading">
+          <p className="eyebrow">RESEÑAS QUE AYUDAN A ELEGIR</p>
+          <div><h2 id="evidence-title">Tu atención merece<br />ser parte de su decisión.</h2>
+          <p>Antes de reservar una hora o elegir dónde comer, otras personas buscan experiencias como la de tus clientes. Facilita que las compartan y ayuda a que conozcan tu negocio.</p></div>
         </div>
-        <div>
-          <h3>¿Por qué importan las reseñas?</h3>
-          <p>En la encuesta BrightLocal 2026, el 97% de las personas encuestadas declaró leer reseñas de negocios locales.</p>
-          <p className="small-print">Estados Unidos · 1.002 adultos · panel mediante SurveyMonkey · publicado el 11 de febrero de 2026. Es conducta declarada; no mide ventas ni resultados de tarjetas NFC y no representa una estimación para Chile.</p>
-          <a className="text-link" href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noreferrer">Consultar estudio y metodología ↗</a>
-          <p>Google permite pedir reseñas auténticas mediante un enlace o QR. Invitamos a todos por igual, sin premios ni filtros por satisfacción.</p>
-          <a className="text-link" href="https://support.google.com/business/answer/3474122?hl=es" target="_blank" rel="noreferrer">Recomendaciones de Google ↗</a>
+        <div className="review-impact__evidence">
+          <div><strong className="review-impact__stat">97%</strong><p>de las personas encuestadas por BrightLocal en 2026 declaró leer reseñas de negocios locales.</p></div>
+          <div><h3>Confianza para dar el siguiente paso</h3><p>Las reseñas aportan contexto sobre el servicio y ayudan a comparar opciones. Google recomienda valorar las opiniones sinceras y responder para demostrar que escuchas.</p>
+          <p className="small-print">BrightLocal: 1.002 adultos de Estados Unidos, panel de SurveyMonkey, febrero de 2026. Conducta declarada; no es una estimación para Chile ni un resultado de AB Reviews.</p>
+          <a className="text-link" href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noreferrer">Estudio y metodología de BrightLocal ↗</a><br />
+          <a className="text-link" href="https://support.google.com/business/answer/3474122?hl=es" target="_blank" rel="noreferrer">Recomendaciones de Google ↗</a></div>
         </div>
+        <h3 id="review-chain-title">De una experiencia a una nueva oportunidad</h3>
+        <ol className="review-chain" aria-labelledby="review-chain-title">
+          <li><span className="review-chain__letter">A</span><p className="eyebrow">CLIENTE A</p><h4>Vive y comparte</h4><p>Recibe tu servicio y, si lo desea, cuenta su experiencia en una reseña auténtica.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
+          <li><span className="review-chain__letter">B</span><p className="eyebrow">CLIENTE B</p><h4>Lee y decide</h4><p>Consulta opiniones, compara opciones y decide si contacta, reserva o visita.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
+          <li><span className="review-chain__letter">C</span><p className="eyebrow">NEGOCIO C</p><h4>Recibe oportunidades</h4><p>Tu barbería, salón o restaurante: el comercio al que AB Reviews ayuda a facilitar el acceso a reseñas.</p></li>
+        </ol>
+        <p className="small-print">Recorrido ilustrativo, no una medición de resultados. Las oportunidades pueden convertirse en ventas según la decisión del cliente y la oferta del negocio. AB Reviews no cuenta con un porcentaje probado de aumento de ventas o márgenes.</p>
+        <p className="review-impact__practice">Invita a todos por igual, sin premios ni filtros por satisfacción. Cada persona decide si publica y qué valoración deja.</p>
       </section>
 
       <section className="included section" id="piloto" aria-labelledby="pilot-title">
-        <div><p className="eyebrow">PROPUESTA DE PILOTO</p><h2 id="pilot-title">5 negocios.<br />30 días para aprender.</h2><p>Buscamos evaluar el acceso a reseñas en situaciones reales. Registraremos una línea base previa, aperturas observadas del enlace, nuevas reseñas públicas y entrevistas con el equipo.</p></div>
+        <div><p className="eyebrow">PROPUESTA DE PILOTO</p><h2 id="pilot-title">5 negocios.<br />30 días en tu punto de atención.</h2><p>Buscamos barberías, salones y restaurantes para evaluar el uso en su atención diaria. Compararemos una línea base con aperturas observadas, nuevas reseñas públicas y la experiencia del equipo.</p></div>
         <div><h3>Una prueba con objetivos claros</h3><p>Las aperturas de un enlace no equivalen a reseñas publicadas. Compararemos los resultados de cada negocio con su línea base y explicaremos las limitaciones de atribución.</p><p>Participación, disponibilidad, costo o préstamo del material y condiciones se acuerdan por escrito antes de comenzar. Esta propuesta no confirma una plaza.</p><ContactActions product="Piloto de 30 días" inquiry="Hola Alejandro, me interesa evaluar mi negocio para el piloto de AB Reviews. Quiero conocer los requisitos, la medición y las condiciones de participación." compact /></div>
       </section>
 
@@ -125,8 +130,8 @@ function Home() {
       </section>
 
       <section className="contact section" id="contacto" aria-labelledby="contact-title">
-        <div><p className="eyebrow">03 / EMPECEMOS POR TU NEGOCIO</p><h2 id="contact-title">¿En qué mesón<br />ponemos el tuyo?</h2><p>Escríbele a Alejandro con el nombre de tu negocio y el formato que te interesa. Confirmamos disponibilidad, configuración y entrega antes de pagar.</p><ContactActions /></div>
-        <aside><span className="contact__mark" aria-hidden="true">ab↗</span><p>Diseñado para el momento<br />en que alguien dice:<br /><em>«Gracias, estuvo muy bueno».</em></p><a href="mailto:alejandro@absoftwareworks.com">alejandro@absoftwareworks.com</a></aside>
+        <div><p className="eyebrow">03 / EMPECEMOS POR TU NEGOCIO</p><h2 id="contact-title">Facilita la próxima reseña<br />de tu negocio.</h2><p>Escríbele a Alejandro con el nombre de tu negocio y el formato que te interesa. Confirmamos disponibilidad, configuración y entrega antes de pagar.</p><ContactActions /></div>
+        <aside><span className="contact__mark" aria-hidden="true">ab↗</span><p>Para barberías, salones<br />y restaurantes que quieren<br /><em>escuchar a sus clientes.</em></p><a href="mailto:alejandro@absoftwareworks.com">alejandro@absoftwareworks.com</a></aside>
       </section>
       <footer className="site-footer"><strong>AB Reviews</strong><span>Un producto de AB Software Works · Chile. Servicio independiente, sin afiliación ni patrocinio de Google.</span><Link to="/demo">Probar antes de elegir ↗</Link></footer>
     </main>
