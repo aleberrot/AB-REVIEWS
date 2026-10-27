@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Hero from '../components/hero/Hero'
+import JourneyIcon from '../components/JourneyIcon'
 import SiteHeader from '../components/SiteHeader'
 import ProductObject from '../components/ProductObject'
 import ContactActions from '../components/ContactActions'
@@ -62,19 +63,27 @@ function Home() {
       </section>
 
       <section className="smart-link section" aria-labelledby="smart-title">
-        <div className="smart-link__diagram" aria-label="NFC y QR abren tu enlace de AB Reviews: acceso directo a Google o página con reseñas y contacto">
-          <div className="smart-link__sources"><span>TARJETA NFC</span><span>CÓDIGO QR</span></div>
-          <span className="smart-link__arrow" aria-hidden="true">↓</span>
-          <div className="smart-link__address"><span>TU ENLACE AB REVIEWS</span><strong>/r/tu-negocio</strong></div>
-          <span className="smart-link__arrow" aria-hidden="true">↓</span>
-          <span className="smart-link__target"><strong>Dejar reseña en Google</strong><br />WhatsApp y redes como opciones secundarias</span>
-        </div>
+        <figure className="business-preview">
+          <figcaption className="business-preview__intro">Así lo ve tu cliente</figcaption>
+          <div className="business-preview__entry"><JourneyIcon name="tap" /><span>Acerca el teléfono o escanea el QR</span></div>
+          <span className="business-preview__arrow" aria-hidden="true">↓</span>
+          <div className="business-preview__page">
+            <span className="business-preview__avatar" aria-hidden="true">M.</span>
+            <span className="eyebrow">NEGOCIO DE EJEMPLO</span>
+            <h3>Mesa &amp; Miga</h3>
+            <p>¿Cómo fue tu visita?</p>
+            <Link className="business-preview__primary" to="/r/demo">Probar cómo dejar una reseña <span aria-hidden="true">↗</span></Link>
+            <span className="business-preview__secondary">También puede encontrar tu WhatsApp y tus redes</span>
+          </div>
+          <p className="business-preview__note">Vista ilustrativa. La demo no publica reseñas.</p>
+        </figure>
         <div>
-          <p className="eyebrow">EL DETALLE QUE HACE LA DIFERENCIA</p>
-          <h2 id="smart-title">Reseñas y contacto,<br />en un mismo enlace.</h2>
-          <p>Tu Card o Stand abre un enlace propio de AB Reviews. Puedes elegir acceso directo a Google o una página con la reseña como acción principal, WhatsApp y tus redes configuradas. Tu enlace puede cambiar; tu tarjeta se queda.</p>
-          <p className="smart-link__note">Incluimos un cambio de destino sin costo. El Kit comparte un mismo enlace entre el stand y sus dos tarjetas.</p>
-          <Link className="text-link" to="/demo">Ver el Smart Link en acción <span aria-hidden="true">↗</span></Link>
+          <p className="eyebrow">DEL TOQUE A TU NEGOCIO</p>
+          <h2 id="smart-title">La página de tu negocio.<br />Lista para compartir.</h2>
+          <p>Tu cliente acerca el teléfono a la tarjeta o escanea el QR del stand. Se abre una página con el nombre de tu negocio y una acción clara: dejar su reseña en Google.</p>
+          <p>Si lo prefieres, podemos llevarlo directamente a Google. En la página también puedes incluir WhatsApp y tus redes para que te encuentre de nuevo.</p>
+          <p className="smart-link__note">Nosotros lo configuramos. Incluimos un cambio de destino sin costo y el Kit comparte el mismo enlace en sus tres piezas.</p>
+          <Link className="text-link" to="/demo">Probar lo que verá mi cliente <span aria-hidden="true">↗</span></Link>
         </div>
       </section>
 
@@ -102,9 +111,9 @@ function Home() {
         </div>
         <h3 id="review-chain-title">De una experiencia a una nueva oportunidad</h3>
         <ol className="review-chain" aria-labelledby="review-chain-title">
-          <li><span className="review-chain__letter">A</span><p className="eyebrow">CLIENTE A</p><h4>Vive y comparte</h4><p>Recibe tu servicio y, si lo desea, cuenta su experiencia en una reseña auténtica.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
-          <li><span className="review-chain__letter">B</span><p className="eyebrow">CLIENTE B</p><h4>Lee y decide</h4><p>Consulta opiniones, compara opciones y decide si contacta, reserva o visita.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
-          <li><span className="review-chain__letter">C</span><p className="eyebrow">NEGOCIO C</p><h4>Recibe oportunidades</h4><p>Tu barbería, salón o restaurante: el comercio al que AB Reviews ayuda a facilitar el acceso a reseñas.</p></li>
+          <li><div className="review-chain__visual"><JourneyIcon name="tap" /><span>01</span></div><h4>Tu cliente se acerca</h4><p>Al terminar la atención, toca la tarjeta o escanea el QR. Su opinión queda a un paso.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
+          <li><div className="review-chain__visual"><JourneyIcon name="review" /><span>02</span></div><h4>Comparte su experiencia</h4><p>Si lo desea, deja una reseña en Google, con sus propias palabras y la valoración que elija.</p><span className="review-chain__arrow" aria-hidden="true">→</span></li>
+          <li><div className="review-chain__visual"><JourneyIcon name="discover" /><span>03</span></div><h4>Alguien más te descubre</h4><p>Lee experiencias reales y cuenta con más información para decidir si te visita o contacta.</p></li>
         </ol>
         <p className="small-print">Recorrido ilustrativo, no una medición de resultados. Las oportunidades pueden convertirse en ventas según la decisión del cliente y la oferta del negocio. AB Reviews no cuenta con un porcentaje probado de aumento de ventas o márgenes.</p>
         <p className="review-impact__practice">Invita a todos por igual, sin premios ni filtros por satisfacción. Cada persona decide si publica y qué valoración deja.</p>
