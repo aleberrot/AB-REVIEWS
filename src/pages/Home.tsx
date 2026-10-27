@@ -133,7 +133,7 @@ function Home() {
         <div><p className="eyebrow">03 / EMPECEMOS POR TU NEGOCIO</p><h2 id="contact-title">Facilita la próxima reseña<br />de tu negocio.</h2><p>Escríbele a Alejandro con el nombre de tu negocio y el formato que te interesa. Confirmamos disponibilidad, configuración y entrega antes de pagar.</p><ContactActions /></div>
         <aside><span className="contact__mark" aria-hidden="true">ab↗</span><p>Para barberías, salones<br />y restaurantes que quieren<br /><em>escuchar a sus clientes.</em></p><a href="mailto:alejandro@absoftwareworks.com">alejandro@absoftwareworks.com</a></aside>
       </section>
-      <footer className="site-footer"><strong>AB Reviews</strong><span>Un producto de AB Software Works · Chile. Servicio independiente, sin afiliación ni patrocinio de Google.</span><Link to="/demo">Probar antes de elegir ↗</Link></footer>
+      <footer className="site-footer"><strong>AB Reviews</strong><span>Un producto de AB Software Works · Chile.<small>Servicio independiente. Google y sus marcas pertenecen a Google LLC.</small></span><Link to="/demo">Probar antes de elegir ↗</Link></footer>
     </main>
   )
 }

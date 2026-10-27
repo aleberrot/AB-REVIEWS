@@ -1,33 +1,20 @@
 import type { ProductFormat } from '../data/products'
-import cardPhoto from '../assets/products/ab-card-real.webp'
-import standPhoto from '../assets/products/ab-stand-real.webp'
-import kitPhoto from '../assets/products/ab-kit-real.webp'
-
-const photos = {
-  card: { src: cardPhoto, alt: 'Tarjeta física AB Review Card blanca con el logotipo de Google y símbolo NFC.' },
-  stand: { src: standPhoto, alt: 'Stand físico AB Review Stand blanco con el logotipo de Google, código QR e indicación NFC.' },
-  kit: { src: kitPhoto, alt: 'Stand y una tarjeta del AB Review Kit fotografiados juntos, con sus diseños físicos originales.' },
-}
+import blackCard from '../assets/products/ab-card-black-studio.webp'
+import whiteCard from '../assets/products/ab-card-white-studio.webp'
+import standPhoto from '../assets/products/ab-stand-studio.webp'
+import kitPhoto from '../assets/products/ab-kit-studio.webp'
 
 function ProductObject({ format }: { format: ProductFormat }) {
-  const photo = photos[format]
   return (
-    <div className="product-reference">
-      <div className="product-reference__label"><span>FORMATO {format === 'card' ? 'TARJETA' : format === 'stand' ? 'STAND' : 'KIT'}</span><strong>{format === 'kit' ? '1 stand + 2 tarjetas' : format === 'card' ? 'Para llevar contigo' : 'Para tu mesón'}</strong><p>Presentación provisional.<br />Fotografía renovada pendiente.</p></div>
-      <details className="product-reference__photo">
-        <summary>Ver foto real disponible</summary>
-        <p className="small-print">Referencia del ejemplar fotografiado; el diseño final se confirma antes de pagar. {format === 'kit' && 'La foto muestra un stand y una tarjeta; el kit ofrecido incluye dos tarjetas.'}</p>
-        <img
-      className="product-photo"
-      src={photo.src}
-      alt={photo.alt}
-      width={1152}
-      height={1536}
-      loading="lazy"
-      decoding="async"
-        />
-      </details>
-    </div>
+    <figure className={`product-gallery product-gallery--${format}`}>
+      <div className="product-gallery__images">
+        {format === 'card' ? <>
+          <img src={blackCard} alt="Tarjeta NFC negra, con su diseño impreso original." width={415} height={645} loading="lazy" decoding="async" />
+          <img src={whiteCard} alt="Tarjeta NFC blanca, con su diseño impreso original." width={385} height={635} loading="lazy" decoding="async" />
+        </> : <img src={format === 'stand' ? standPhoto : kitPhoto} alt={format === 'stand' ? 'Stand blanco con QR y símbolos NFC, en presentación de estudio.' : 'Kit con un stand blanco y dos tarjetas NFC, una blanca y una negra.'} width={format === 'stand' ? 470 : 1536} height={format === 'stand' ? 800 : 1024} loading="lazy" decoding="async" />}
+      </div>
+      <figcaption>Edición comercial a partir de fotografías reales.{format === 'card' ? ' Tarjetas blanca y negra.' : ' QR ilustrativo; prueba el acceso en la demo.'}</figcaption>
+    </figure>
   )
 }
 

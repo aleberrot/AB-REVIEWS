@@ -1107,3 +1107,12 @@ h1, h2 { font-weight: 600; }
   .catalog__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .catalog-item:last-child { grid-column: 1 / -1; }
 }
+
+/* Fotografías comerciales: producto completo y proporciones originales. */
+.product-gallery { margin: 20px 0; min-width: 0; }
+.product-gallery__images { display: flex; align-items: center; justify-content: center; gap: 12px; height: 280px; padding: 12px; background: #f7f2e9; border-radius: 8px; overflow: hidden; }
+.product-gallery__images img { display: block; width: 100%; height: 100%; min-width: 0; object-fit: contain; }
+.product-gallery--card img { width: calc(50% - 6px); }
+.product-gallery figcaption { margin-top: 10px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.site-footer small { display: block; margin-top: 6px; font-size: 11px; line-height: 1.5; }
+@media (max-width: 560px) { .product-gallery__images { height: 300px; } }
