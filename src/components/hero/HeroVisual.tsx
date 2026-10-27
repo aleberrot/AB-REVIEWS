@@ -57,7 +57,7 @@ function HeroVisual() {
         <div className="hero-access">
           <span className="eyebrow">DOS FORMAS DE ENTRAR</span>
           <strong>NFC + QR</strong>
-          <p>Acerca o escanea.<br />Abre tu Smart Link.</p>
+          <p>Acerca o escanea.<br />Llega a tu negocio.</p>
           <SmartQr value={buildSmartLink('demo')} />
         </div>
         <span className="hero-object__wave" aria-hidden="true">))</span>

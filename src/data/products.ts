@@ -33,12 +33,12 @@ export const products: Product[] = [
     launchPrice: 32990,
     regularPrice: 39990,
     use: 'El mismo negocio, en más de un punto de atención.',
-    contents: '1 stand + 2 tarjetas · 1 Smart Link compartido',
+    contents: '1 stand + 2 tarjetas · 1 enlace compartido',
   },
 ]
 
 export const includedServices = [
-  'Smart Link propio de AB Reviews',
+  'Página de tu negocio o acceso directo a Google',
   'Enlace a las reseñas de tu negocio en Google',
   'Programación NFC y QR digital',
   'Configuración y pruebas antes de entregar',
