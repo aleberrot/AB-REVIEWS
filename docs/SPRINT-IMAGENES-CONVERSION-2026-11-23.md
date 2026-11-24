@@ -1,6 +1,6 @@
 # Auditoría del sprint — 23/11/2026
 
-Cambios preparados para una pull request, con commit y publicación de rama autorizados por el usuario. Sin fusión ni despliegue de producción. La sustitución por las tres imágenes nuevas y la activación de Analytics siguen pendientes por los bloqueos indicados abajo.
+Cambios preparados para una pull request, con commit y publicación de rama autorizados por el usuario. La PR #8 fue fusionada por el usuario. La corrección de las tres imágenes nuevas se prepara en una PR posterior, sin fusionarla ni desplegar producción. La activación de Analytics sigue pendiente.
 
 ## Base de trabajo
 
@@ -35,17 +35,19 @@ Las rutas del mapa son relativas a src salvo vercel.json. El wildcard muestra ay
 - Eventos tipados y pageviews opcionales con filtros de rutas y pruebas internas. No se creó un backend ni se contrataron servicios.
 - Arquitectura y costos en MEDICION-Y-ARQUITECTURA.md; alta, NFC/QR, pruebas físicas, línea base, seguimientos y consentimiento en piloto/PROCEDIMIENTO.md.
 
-## Imágenes y bloqueo
+## Imágenes nuevas: corrección completada
 
-Las tres imágenes nuevas se localizaron por nombre exacto, pero la transferencia falló por DNS en dos intentos. No se obtuvieron sus bytes, no se inspeccionaron y no se sustituyeron por archivos distintos renombrados. Su integración y optimización quedan pendientes.
+Se recuperaron los tres archivos exactos proporcionados por el usuario y se contrastaron sus tamaños con los originales. Se revisaron visualmente antes de generar derivados. Los problemas DNS del mecanismo inicial de descarga quedaron resueltos mediante la descarga del navegador; no se utilizaron imágenes sustitutas.
 
-| Archivo solicitado | Uso previsto | Estado |
-| --- | --- | --- |
-| google_review_nfc_cards_duo.png | Card | Localizado, sin bytes disponibles |
-| white_nfc_review_stand_display.png | Stand | Localizado, sin bytes disponibles |
-| ab_reviews_google_feedback_kit.png | Kit | Localizado, sin bytes disponibles |
+| Fuente | PNG original | JPEG 480 px | JPEG 800 px |
+| --- | ---: | ---: | ---: |
+| google_review_nfc_cards_duo.png | 1.420.219 B | 29.930 B | 61.687 B |
+| white_nfc_review_stand_display.png | 1.456.413 B | 33.774 B | 74.409 B |
+| ab_reviews_google_feedback_kit.png | 1.385.627 B | 35.046 B | 73.130 B |
 
-Cuando estén disponibles: conservar PNG fuente fuera del bundle; exportar WebP de 480/800/1200 px sin deformar; usar srcSet/sizes, revisar calidad y peso y mantener contain. Revisar fidelidad al stock, cantidades, diseño físico, QR ilustrativo y ausencia de afiliación oficial aparente a Google. No usar QR de IA como QR de entrega. Conservar las imágenes anteriores hasta comprobar visualmente el reemplazo.
+Los PNG originales permanecen conservados fuera del bundle. El catálogo usa JPEG con calidad 88, srcSet 480/800, sizes, dimensiones explícitas y carga diferida. Se utiliza el codificador de Windows para evitar añadir dependencias al proyecto; no se requiere ejecutar el optimizador en Vercel. El script reproducible es scripts/optimize-product-images.ps1.
+
+Card y Kit eliminan solamente márgenes blancos superior/inferior: mantienen todas las piezas y sus sombras. Stand conserva todo el encuadre. No se alteraron diseños, letras, logos ni códigos QR. Los cuatro WebP comerciales anteriores permanecen en el repositorio; las fotos originales continúan accesibles mediante el desplegable. Las leyendas aclaran que las nuevas son imágenes comerciales de referencia y que el QR es ilustrativo. La cantidad de Card sigue siendo una tarjeta.
 
 | Imagen conservada/restaurada | Bytes | Función |
 | --- | ---: | --- |
@@ -87,7 +89,7 @@ Sin desbordamiento horizontal: innerWidth 375/430/768/1280 frente a scrollWidth 
 
 El SDK @vercel/analytics no está instalado. La descarga de dependencias está bloqueada y el paquete no está en caché. Se preparó un puente opcional al script de primera parte; flags desactivados, sin recepción real comprobada. No anunciar que la analítica ya está activa. Ver propuesta, límites y alternativa manual en MEDICION-Y-ARQUITECTURA.md.
 
-## Inventario frente a la base actual de GitHub
+## Inventario del sprint inicial frente a su base de GitHub
 
 Modificados:
 
@@ -116,9 +118,18 @@ No se añadieron dependencias. package.json, lockfile, rutas, registro y vercel.
 
 ## Pendientes para iniciar
 
-1. Recuperar las tres imágenes nuevas, comprobar fidelidad, optimizar y revisar reemplazo.
+1. Revisar la PR de corrección de imágenes nuevas; los tres archivos ya se recuperaron, optimizaron e integraron. Confirmar el diseño y la variante física antes de entregar al primer negocio.
 2. Verificar cuenta/plan Vercel; elegir puente o SDK, activar Analytics y comprobar recepción tras despliegue autorizado.
 3. Elegir medición manual o aprobar arquitectura/costos de Function + Supabase antes de crear BD.
 4. Dar de alta primer negocio real. Probar NFC y QR impresos con Android e iPhone, especialmente que el QR físico del stock se pueda configurar al Smart Link correcto.
 5. Formalizar soporte, cambio, reposición, despacho y continuidad de enlaces; recoger permisos separados.
 6. Revisar la pull request y sus pendientes antes de decidir la fusión. La publicación en producción requiere autorización separada; no se ha desplegado este sprint.
+
+## Archivos de la corrección de imágenes
+
+- Modificados: src/components/ProductObject.tsx, src/App.css y este informe.
+- Añadido: scripts/optimize-product-images.ps1.
+- Añadidas: seis imágenes JPEG con nombres de las fuentes y sufijos -480 / -800 en src/assets/products/.
+- No se eliminó ninguna fotografía anterior ni se modificaron rutas, precios o analítica en esta corrección.
+
+Verificación de esta corrección: build/TypeScript y lint aprobados; 15/15 pruebas existentes aprobadas. Catálogo nuevo revisado en navegador a 375, 430, 768 y 1280 px, sin desbordamiento horizontal y con las tres imágenes nuevas cargadas. Consola sin errores ni warnings capturados.
