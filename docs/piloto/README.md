@@ -1,5 +1,7 @@
 # Uso del kit de piloto
 
+Completar [PROCEDIMIENTO.md](PROCEDIMIENTO.md) antes de la entrega, con seguimiento a 48 horas, 7 y 30 días. Revisar [la arquitectura](../MEDICION-Y-ARQUITECTURA.md) antes de prometer estadísticas automáticas.
+
 Leer EVIDENCIA-Y-PILOTO.md antes de reclutar. Las plantillas no son resultados.
 Crear una copia privada de registro-diario.md para cada día y negocio.
 Conservar datos diarios y referencias de evidencia para auditar agregados.

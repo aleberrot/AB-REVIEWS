@@ -44,11 +44,19 @@ function Home() {
               <p className="catalog-item__contents">{product.contents}</p>
               <p className="catalog-item__price">{formatPrice(product.launchPrice)} <span>CLP</span></p>
               <p className="catalog-item__regular">Precio regular: {formatPrice(product.regularPrice)}</p>
-              <ContactActions product={product.name} compact />
+              <ul className="catalog-item__services" aria-label={`Servicios incluidos en ${product.name}`}>
+                <li>Configuración NFC + QR digital y Smart Link.</li>
+                <li>{product.format === 'card' ? 'QR digital; la tarjeta fotografiada no lleva QR impreso.' : 'QR físico visible en el stand.'}</li>
+                <li>30 días de soporte de configuración desde la entrega.</li>
+                <li>1 cambio de destino sin costo, a través de nuestro equipo.</li>
+                <li>Despacho por separado, cotizado antes del pago.</li>
+              </ul>
+              <ContactActions product={product.name} format={product.format} compact />
             </article>
           ))}
         </div>
         <p className="small-print">Precios de lanzamiento sujetos a disponibilidad, confirmada antes de pagar. Despacho no incluido; se calcula según destino. Retiro a coordinar.</p>
+        <p className="small-print">Configuramos el enlace y el acceso digital; no ofrecemos impresión personalizada con el logo de tu negocio. AB Reviews es un servicio independiente de Google.</p>
       </section>
 
       <section className="included section" aria-labelledby="included-title">
