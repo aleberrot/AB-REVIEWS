@@ -1,5 +1,7 @@
 # AB Reviews · Configuración y entrega v1
 
+Actualizacion del sprint: ver [procedimiento del piloto](piloto/PROCEDIMIENTO.md) y [arquitectura de medicion](MEDICION-Y-ARQUITECTURA.md). Smart Links aun no registra accesos automaticamente. Todo despliegue requiere autorizacion.
+
 ## Qué se vende
 
 | Formato | Lanzamiento (CLP) | Regular (CLP) | Contenido físico |
